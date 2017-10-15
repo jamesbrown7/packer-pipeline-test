@@ -3,7 +3,7 @@ node {
    stage('Preparation') { // for display purposes
       // ** NOTE: This 'Packer' tool must be configured
       // **       in the global configuration.           
-      packerHome = '/usr/local/bin/packer'
+      packerHome = '/usr/local/bin'
       packerTemplateName = "packer.json"
    }
    stage('Packer (AMI generation)') {
