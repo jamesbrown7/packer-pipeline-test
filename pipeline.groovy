@@ -9,7 +9,7 @@ node {
    stage('Packer (AMI generation)') {
       // Run the maven build
       if (isUnix()) {
-         sh "ls"
+         sh "ls -R"
          sh "'${packerHome}/packer' build src/${packerTemplateName}"
       } else {
          bat(/"${packerHome}\packer" build src\${packerTemplateName}/)
