@@ -10,9 +10,9 @@ node {
       // Run the maven build
       if (isUnix()) {
          sh "ls"
-         sh "'${packerHome}/packer' build ${packerTemplateName}"
+         sh "'${packerHome}/packer' build src/${packerTemplateName}"
       } else {
-         bat(/"${packerHome}\packer" build ${packerTemplateName}/)
+         bat(/"${packerHome}\packer" build src\${packerTemplateName}/)
       }
    }
 }
