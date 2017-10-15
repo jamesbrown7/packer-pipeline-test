@@ -1,12 +1,9 @@
 node {
    def packerHome, packerTemplateName
    stage('Preparation') { // for display purposes
-      // Get the packer base config from S3
-      git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-
       // ** NOTE: This 'Packer' tool must be configured
       // **       in the global configuration.           
-      packerHome = tool 'Packer'
+      packerHome = '/usr/local/bin/packer'
       packerTemplateName = "packer.json"
    }
    stage('Packer (AMI generation)') {
