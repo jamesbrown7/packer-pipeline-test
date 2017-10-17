@@ -2,11 +2,11 @@
   "_comment" : "Simple Packer Template using Amazon Linux 2017.03",
   "builders": [{
     "type": "amazon-ebs",
-    "region": "us-east-1",
+    "region": "us-west-2",
     "source_ami": "ami-e689729e",
     "instance_type": "t2.micro",
     "ssh_username": "ec2-user",
-    "ami_name": "HelloWorld Build-{{user `Build`}}"
+    "ami_name": "helloworld-build"
   }],
   "provisioners": [{
     "type": "shell",
