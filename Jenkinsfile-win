@@ -6,7 +6,7 @@ node {
       // ** NOTE: This 'Packer' tool must be configured
       // **       in the global configuration.
       packerHome = '/usr/local/bin'
-      packerTemplateName = "packer.json"
+      packerTemplateName = "windows-packer.json"
    }
    stage('Packer (AMI generation)') {
       // Run the maven build
@@ -14,7 +14,7 @@ node {
          sh "pwd; ls -R"
          sh "'${packerHome}/packer' build ${packerTemplateName}"
       } else {
-         bat(/"${packerHome}\packer" build ${packerTemplateName}/)
+         bat(/"${packerHome}\packer" build \"${packerTemplateName}\"/)
       }
    }
 }

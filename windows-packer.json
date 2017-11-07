@@ -1,0 +1,30 @@
+{
+  "_comment" : "Simple Packer Template using Windows Server 2016",
+  "builders": [{
+    "type": "amazon-ebs",
+    "region": "us-west-2",
+    "source_ami": "ami-f318de8b",
+    "instance_type": "t2.small",
+    "ssh_username": "ec2-user",
+    "ami_name": "helloworld-windows {{timestamp}}",
+    "user_data_file":"./ec2-userdata.ps1",
+    "communicator": "winrm",
+    "winrm_username": "Administrator",
+    "winrm_use_ssl": true,
+    "winrm_insecure": true
+  }],
+  "provisioners": [
+    {
+      "type": "powershell",
+      "inline": [
+        "Set-ExecutionPolicy Bypass; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))",
+        "choco install -y git"
+      ]
+    },
+    {
+      "type": "file",
+      "source": "./ec2-userdata.ps1",
+      "destination": "C:\\Windows"
+    }
+  ]
+}
