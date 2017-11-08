@@ -25,7 +25,7 @@
       "type": "windows-restart"
     },
     {
-      "type": "windows-powershell",
+      "type": "powershell",
       "inline": [
         "choco install -y awstools.powershell"
       ]
