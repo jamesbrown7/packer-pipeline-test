@@ -22,14 +22,12 @@
       ]
     },
     {
-      "_comment": "Wait for the AWS CLI installer to complete, since it runs as a background process",
       "type": "shell-local",
       "inline": [
         "sleep 30"
       ]
     },
     {
-      "_comment": "Start in a new Powershell instance so that our path is set up properly",
       "type": "powershell",
       "inline": [
         "aws s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip c:\\Windows\\Temp"
