@@ -27,7 +27,7 @@
     {
       "type": "windows-powershell",
       "inline": [
-        "choco install -y awstools.powershell",
+        "choco install -y awstools.powershell"
       ]
     },
     {
