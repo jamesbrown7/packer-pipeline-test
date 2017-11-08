@@ -22,16 +22,16 @@
       ]
     },
     {
-      "type": "restart",
+      "type": "restart"
     },
     {
-      "type": "powershell",
+      "type": "windows-powershell",
       "inline": [
         "choco install -y awstools.powershell",
       ]
     },
     {
-      "type": "restart",
+      "type": "windows-restart"
     },
     {
       "type": "powershell",
