@@ -18,7 +18,24 @@
       "type": "powershell",
       "inline": [
         "Set-ExecutionPolicy Bypass; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))",
+        "choco install -y powershell"
+      ]
+    },
+    {
+      "type": "restart",
+    },
+    {
+      "type": "powershell",
+      "inline": [
         "choco install -y awstools.powershell",
+      ]
+    },
+    {
+      "type": "restart",
+    },
+    {
+      "type": "powershell",
+      "inline": [
         "aws s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip c:\\Windows\\Temp"
       ]
     }
