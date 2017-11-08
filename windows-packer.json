@@ -28,7 +28,7 @@
     {
       "type": "powershell",
       "inline": [
-        "aws s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip c:\\Windows\\Temp"
+        "Powershell -NonInteractive -Command 'aws s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip c:\\Windows\\Temp'"
       ]
     }
   ]
