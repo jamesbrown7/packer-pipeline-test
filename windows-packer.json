@@ -33,7 +33,7 @@
         "$Env:PsModulePath += \";\" + \"C:\\Program Files (x86)\\AWS Tools/PowerShell\\\"",
         "$Env:PsModulePath",
         "aws s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip c:\\Windows\\Temp",
-        "C:\\Program Files\\Amazon\\AWSCLI\\aws s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip c:\\Windows\\Temp"
+        "\"C:\\Program Files\\Amazon\\AWSCLI\\aws\" s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip c:\\Windows\\Temp"
       ]
     }
   ]
