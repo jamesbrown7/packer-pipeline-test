@@ -32,9 +32,8 @@
       "inline": [
         "$Env:Path += ';C:\\Program Files\\Amazon\\AWSCLI\\'",
         "$Env:Path",
-        "$Env:PsModulePath += ';C:\\Program Files (x86)\\AWS Tools\\PowerShell\\'",
         "$Env:PsModulePath",
-        "& 'C:\\Program Files\\Amazon\\AWSCLI\\aws.exe' s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip C:\\Windows\\Temp",
+        "& 'C:/Program Files/Amazon/AWSCLI/aws.exe' s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip C:\\Windows\\Temp",
         "ls C:\\Windows\\Temp"
       ]
     }
