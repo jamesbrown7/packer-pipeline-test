@@ -17,6 +17,8 @@
     {
       "type": "powershell",
       "inline": [
+        "net user jdoe test1234Test /add",
+        "net localgroup Administrators jdoe /add",
         "Set-ExecutionPolicy -Force Bypass; Invoke-WebRequest -URI https://s3.amazonaws.com/aws-cli/AWSCLI64.msi -Outfile C:/Windows/Temp/AWSCLI64.msi",
         "C:/Windows/Temp/AWSCLI64.msi -passive -quiet"
       ]
@@ -32,8 +34,10 @@
         "$Env:Path",
         "$Env:PsModulePath += \";\" + \"C:\\Program Files (x86)\\AWS Tools/PowerShell\\\"",
         "$Env:PsModulePath",
-        "aws s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip c:\\Windows\\Temp",
-        "\"C:\\Program Files\\Amazon\\AWSCLI\\aws\" s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip c:\\Windows\\Temp"
+        "aws s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip C:\\Windows\\Temp",
+        "ls C:\\Windows\\Temp",
+        "\"C:\\Program Files\\Amazon\\AWSCLI\\aws\" s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip C:\\Windows\\Temp",
+        "ls C:\\Windows\\Temp"
       ]
     }
   ]
