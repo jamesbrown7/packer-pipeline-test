@@ -18,17 +18,29 @@
     {
       "type": "powershell",
       "inline": [
+        "#",
+        "# Set up a user account for the AMI, might be good to change this to a variable to be supplied by a caller",
+        "#",
         "net user jdoe test1234Test /add",
         "net localgroup Administrators jdoe /add",
+        "#",
+        "# Download the AWS CLI",
+        "#",
         "Set-ExecutionPolicy -Force Bypass; Invoke-WebRequest -URI https://s3.amazonaws.com/aws-cli/AWSCLI64.msi -Outfile C:/Windows/Temp/AWSCLI64.msi",
+        "#",
+        "# Install AWS CLI (it runs in the background, so we sleep 60 seconds after starting to allow it to complete)",
+        "#",
         "C:/Windows/Temp/AWSCLI64.msi -passive -quiet",
         "Start-Sleep -s 60",
-        "$Env:Path += ';C:\\Program Files\\Amazon\\AWSCLI\\'",
-        "$Env:Path",
-        "$Env:PsModulePath",
-        "ls 'c:\\Program Files'",
+        "#",
+        "# Path usage was problematic, and this was the only way I could get PowerShell to call the aws executable",
+        "# without pathing problems.",
+        "#",
         "cd 'C:\\Program Files\\Amazon\\AWSCLI'",
         "./aws.exe s3 cp s3://com.nuovo.gw.winpacker.test/SourceTree_2.5.1a.zip C:\\Windows\\Temp",
+        "#",
+        "# Validate that the copy from S3 completed",
+        "#",
         "ls C:\\Windows\\Temp"
       ]
     }
