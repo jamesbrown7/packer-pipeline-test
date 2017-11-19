@@ -4,7 +4,7 @@
     "type": "amazon-ebs",
     "region": "us-west-2",
     "source_ami": "ami-f318de8b",
-    "iam_instance_profile": "jdb-fluentd-s3-access",
+    "iam_instance_profile": "jdb-packer-s3-access-role",
     "instance_type": "t2.small",
     "ssh_username": "ec2-user",
     "ami_name": "helloworld-windows {{timestamp}}",
